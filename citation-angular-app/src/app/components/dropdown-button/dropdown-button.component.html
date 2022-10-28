@@ -1,0 +1,15 @@
+<div class="dropdown">
+    <button (click)="onClick()" class="dropbtn">
+        <span class="text-sm text-gray-700">
+            {{ selectedValue }}
+        </span>
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1.5L7 6.5L13 1.5" stroke="black" stroke-width="2" />
+        </svg>
+    </button>
+    <div [ngClass]="{'active': active}" class="dropdown-content">
+        <a *ngFor="let item of dropdownList" (click)="onClickDropDown(item)" class="text-sm text-gray-700">
+            {{ item }}
+        </a>
+    </div>
+</div>

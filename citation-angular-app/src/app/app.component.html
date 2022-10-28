@@ -1,0 +1,122 @@
+<app-header></app-header>
+<div class="main-layout px-4">
+  <section class="flex items-start gap-8 mb-4">
+    <div>
+      <h1 class="font-bold text-md">Content Stream</h1>
+      <app-dropdown-button (onResult)="setDropDownValue($event)"></app-dropdown-button>
+    </div>
+    <div *ngIf="dropDownValue !== '';" style="width: 35rem;">
+      <h1 class="font-bold text-md">Search Citation</h1>
+      <app-search-input (onSubmit)="setSearchTypeValue($event)"></app-search-input>
+    </div>
+  </section>
+  <section class="relative w-full table-section">
+    <div class="absolute bottom-0 w-full left-0 mb-2 flex justify-center items-center border border-red-600">
+      <div class="flex items-center gap-4">
+        <svg class="rotate-180" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <rect x="0.764648" y="20.0588" width="19.1176" height="19.1176" transform="rotate(-90 0.764648 20.0588)"
+            fill="url(#pattern0)" />
+          <defs>
+            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlink:href="#image0_2_886" transform="scale(0.01)" />
+            </pattern>
+            <image id="image0_2_886" width="100" height="100"
+              xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAABf0lEQVR4nO3bPU7EMBRF4duyidGInU3HokEjFjJAEa4UUJKJE//7fJLbp+gduXARCQAAAAAAAAAAAAAAAAAA6KX0B3Qg2g4vkt4lvcUaOKCbpLuk17ODLpI+JH1L+hJRjrhJemja4adORJnH8CFKmHkMn0NRlmIQJcxSjMNRtoIQ5bmtGEluCVHWJYlhRAmTNIYRZZ8sMYwo27LGMKIsKxLDiPJX0RhGlEkVMWz0KFXFsFGjVBnDRotSdQwbJUoTMaz3KE3FsF6jNBnDeovSdAzrJUoXMaz1KF3FsFajdBnDWovSdQxrJcoQMaz2KEPFsFqjDBnDaosydAyrJQoxZkpHIcaCUlGIsSF3FGLskCsKMQKkjkKMA1JFIcYJsaMQI4JYUYgR0dkoxEjgaBRiJBQahRgZ7I1CjIyumv7zXlv2Q9sx7r8zENGzm8LNKCA0CjEy2BuFGBk9i0KMAtaiEKOg/1GIUQFHIUZFruKdAQAAAAAAAAAAAAAAAABA/X4AK4DEtQQ+UfQAAAAASUVORK5CYII=" />
+          </defs>
+        </svg>
+        <div *ngFor="let data of [1,2,3,4,5,6]" style="background-color: #ECECEC;" class="w-5 h-5 cursor-pointer rounded-md bg-red-500 text-center text-xs align-middle">{{data}}</div>
+        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
+          <rect x="0.764648" y="20.0588" width="19.1176" height="19.1176" transform="rotate(-90 0.764648 20.0588)"
+            fill="url(#pattern0)" />
+          <defs>
+            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlink:href="#image0_2_886" transform="scale(0.01)" />
+            </pattern>
+            <image id="image0_2_886" width="100" height="100"
+              xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAABf0lEQVR4nO3bPU7EMBRF4duyidGInU3HokEjFjJAEa4UUJKJE//7fJLbp+gduXARCQAAAAAAAAAAAAAAAAAA6KX0B3Qg2g4vkt4lvcUaOKCbpLuk17ODLpI+JH1L+hJRjrhJemja4adORJnH8CFKmHkMn0NRlmIQJcxSjMNRtoIQ5bmtGEluCVHWJYlhRAmTNIYRZZ8sMYwo27LGMKIsKxLDiPJX0RhGlEkVMWz0KFXFsFGjVBnDRotSdQwbJUoTMaz3KE3FsF6jNBnDeovSdAzrJUoXMaz1KF3FsFajdBnDWovSdQxrJcoQMaz2KEPFsFqjDBnDaosydAyrJQoxZkpHIcaCUlGIsSF3FGLskCsKMQKkjkKMA1JFIcYJsaMQI4JYUYgR0dkoxEjgaBRiJBQahRgZ7I1CjIyumv7zXlv2Q9sx7r8zENGzm8LNKCA0CjEy2BuFGBk9i0KMAtaiEKOg/1GIUQFHIUZFruKdAQAAAAAAAAAAAAAAAABA/X4AK4DEtQQ+UfQAAAAASUVORK5CYII=" />
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <app-detail-table *ngIf="dropDownValue === ''; else elseBlock"></app-detail-table>
+    <ng-template #elseBlock>
+      <div class="flex flex-col justify-center items-center">
+        <svg width="439" height="280" viewBox="0 0 477 318" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M139.846 77.7581L68.4858 125.493L138.775 230.569L210.134 182.834L139.846 77.7581Z" fill="#F5F5F5" />
+          <path d="M173.259 177.864L172.451 182.875L136.975 177.762L137.783 172.75L173.259 177.864Z" fill="#E0E0E0" />
+          <path d="M155.394 159.986L160.482 160.717L154.84 195.646L149.746 194.909L155.394 159.986Z" fill="#E0E0E0" />
+          <path
+            d="M122.748 115.593C122.799 115.663 115.65 120.541 106.778 126.469C97.9055 132.396 90.6742 137.153 90.6233 137.077C90.5724 137.001 97.7211 132.129 106.593 126.195C115.465 120.261 122.665 115.517 122.748 115.593Z"
+            fill="#E0E0E0" />
+          <path
+            d="M148.964 109.004C149.015 109.08 137.122 117.119 122.405 126.965C107.688 136.81 95.6925 144.728 95.6544 144.658C95.6162 144.588 107.484 136.536 122.22 126.691C136.956 116.846 148.913 108.928 148.964 109.004Z"
+            fill="#E0E0E0" />
+          <path
+            d="M154.224 116.865C154.275 116.941 142.381 124.987 127.664 134.832C112.947 144.677 100.952 152.595 100.914 152.519C100.876 152.443 112.756 144.404 127.48 134.552C142.203 124.701 154.173 116.789 154.224 116.865Z"
+            fill="#E0E0E0" />
+          <path
+            d="M159.483 124.732C159.534 124.809 147.641 132.854 132.924 142.693C118.207 152.532 106.212 160.463 106.212 160.386C106.212 160.31 118.048 152.265 132.771 142.419C147.495 132.574 159.432 124.656 159.483 124.732Z"
+            fill="#E0E0E0" />
+          <path
+            d="M164.724 132.6C164.775 132.676 152.882 140.715 138.165 150.56C123.448 160.406 111.453 168.324 111.421 168.247C111.389 168.171 123.276 160.132 138.012 150.287C152.748 140.442 164.724 132.523 164.724 132.6Z"
+            fill="#E0E0E0" />
+          <path d="M378.464 148.166L318.533 188.255L377.563 276.5L437.494 236.41L378.464 148.166Z" fill="#F5F5F5" />
+          <path d="M406.531 232.254L405.851 236.465L376.054 232.172L376.741 227.961L406.531 232.254Z" fill="#E0E0E0" />
+          <path d="M391.528 217.239L395.802 217.855L391.063 247.188L386.783 246.571L391.528 217.239Z" fill="#E0E0E0" />
+          <path
+            d="M364.084 179.988C364.135 180.064 358.138 184.167 350.684 189.146C343.23 194.126 337.15 198.108 337.099 198.05C337.048 197.993 343.052 193.878 350.499 188.892C357.947 183.906 364.034 179.88 364.084 179.988Z"
+            fill="#E0E0E0" />
+          <path
+            d="M386.122 174.423C386.173 174.499 376.194 181.266 363.862 189.528C351.53 197.79 341.436 204.442 341.385 204.366C341.335 204.29 351.313 197.523 363.645 189.255C375.977 180.987 386.052 174.347 386.122 174.423Z"
+            fill="#E0E0E0" />
+          <path
+            d="M390.542 181.025C390.593 181.101 380.614 187.868 368.282 196.136C355.95 204.404 345.857 211.044 345.806 210.968C345.755 210.891 355.702 204.156 368.066 195.888C380.43 187.62 390.504 180.955 390.542 181.025Z"
+            fill="#E0E0E0" />
+          <path
+            d="M394.956 187.62C395.007 187.696 385.022 194.463 372.696 202.731C360.37 210.999 350.271 217.639 350.22 217.563C350.169 217.487 360.148 210.726 372.48 202.452C384.812 194.177 394.912 187.556 394.956 187.62Z"
+            fill="#E0E0E0" />
+          <path
+            d="M399.408 194.241C399.459 194.317 389.48 201.078 377.148 209.346C364.816 217.614 354.722 224.254 354.672 224.184C354.621 224.114 364.6 217.34 376.932 209.072C389.264 200.804 399.325 194.164 399.408 194.241Z"
+            fill="#E0E0E0" />
+          <path d="M283.65 81.6239L218.258 46.6491L166.759 142.937L232.151 177.912L283.65 81.6239Z" fill="#F5F5F5" />
+          <path d="M220.959 147.787L216.812 149.206L206.28 120.096L210.433 118.671L220.959 147.787Z" fill="#E0E0E0" />
+          <path d="M227.319 126.901L228.832 131.08L199.92 140.982L198.406 136.804L227.319 126.901Z" fill="#E0E0E0" />
+          <path
+            d="M247.862 83.952C247.811 84.0474 241.184 80.6003 233.049 76.2564C224.915 71.9125 218.37 68.3064 218.421 68.211C218.472 68.1156 225.106 71.5627 233.24 75.9066C241.374 80.2505 247.913 83.8502 247.862 83.952Z"
+            fill="#E0E0E0" />
+          <path
+            d="M263.558 101.27C263.507 101.366 252.53 95.5908 239.041 88.3786C225.551 81.1663 214.663 75.2388 214.714 75.1434C214.764 75.048 225.735 80.8165 239.225 88.0351C252.715 95.2537 263.609 101.175 263.558 101.27Z"
+            fill="#E0E0E0" />
+          <path
+            d="M259.704 108.476C259.653 108.572 248.676 102.803 235.187 95.5844C221.697 88.3658 210.809 82.4447 210.86 82.3493C210.91 82.2539 221.881 88.0288 235.371 95.241C248.861 102.453 259.755 108.381 259.704 108.476Z"
+            fill="#E0E0E0" />
+          <path
+            d="M255.85 115.682C255.799 115.777 244.822 110.009 231.332 102.797C217.842 95.5844 206.954 89.676 207.005 89.5615C207.056 89.447 218.027 95.2346 231.516 102.447C245.006 109.659 255.901 115.587 255.85 115.682Z"
+            fill="#E0E0E0" />
+          <path
+            d="M251.996 122.888C251.945 122.983 240.968 117.215 227.478 110.003C213.989 102.79 203.094 96.8628 203.151 96.7674C203.208 96.672 214.173 102.441 227.663 109.653C241.152 116.865 252.047 122.793 251.996 122.888Z"
+            fill="#E0E0E0" />
+          <path opacity="0.2" d="M252.333 0H250.692V27.9713H252.333V0Z" fill="black" />
+          <path
+            d="M190.164 149.167L167.65 264.792L164.724 279.929L314.82 279.204C321.562 279.172 327.54 273.187 329.696 264.296L356.319 155.139C357.966 148.392 354.354 141.37 349.24 141.376L197.287 141.535C193.98 141.529 191.016 144.658 190.164 149.167Z"
+            fill="#FF725E" />
+          <g opacity="0.5">
+            <path
+              d="M190.164 149.167L167.65 264.792L164.724 279.929L314.82 279.204C321.562 279.172 327.54 273.187 329.696 264.296L356.319 155.139C357.966 148.392 354.354 141.37 349.24 141.376L197.287 141.535C193.98 141.529 191.016 144.658 190.164 149.167Z"
+              fill="black" />
+          </g>
+          <path
+            d="M300.44 256.944L284.54 128.847C283.904 123.6 279.713 119.682 274.771 119.702L239.918 119.81C238.623 119.824 237.344 120.102 236.16 120.627C234.976 121.152 233.911 121.913 233.03 122.862L216.494 140.461L119.568 140.982C113.647 141.014 109.093 146.623 109.875 152.92L124.637 271.311C125.273 276.552 129.464 280.463 134.393 280.457L303.346 280.12C322.159 280.508 323.959 274.956 323.959 274.956C302.361 279.732 300.44 256.976 300.44 256.944Z"
+            fill="#FF725E" />
+          <g opacity="0.5">
+            <path d="M227.586 231.326L221.887 237.444L178.003 197.961L183.702 191.843L227.586 231.326Z" fill="white" />
+            <path d="M219.502 190.488L225.799 196.155L186.093 238.799L179.791 233.132L219.502 190.488Z" fill="white" />
+          </g>
+        </svg>
+        <h1 class="font-semibold">No Data to show</h1>
+      </div>
+    </ng-template>
+  </section>
+</div>
