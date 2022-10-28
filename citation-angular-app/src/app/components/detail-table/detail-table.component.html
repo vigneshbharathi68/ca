@@ -1,25 +1,15 @@
 <div class="table-container">
+    <!-- {{ tableData | json }} -->
+    <div *ngIf="tableData.length > 0;">
+        <div *ngFor="let data of tableData; let indexOfElement=index;">
+            {{ data.jur }}
+        </div>
+
+    </div>
     <table class="table">
         <thead class="" style="background-color: #F4F4F4;">
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-                <th scope="col">Handle</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-                <th scope="col">Handle</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th *ngFor="let title of tableHead " scope="col">{{ title }}</th>
             </tr>
         </thead>
         <tbody>
