@@ -16,16 +16,16 @@ export class DetailTableComponent implements OnInit {
   ngOnInit(): void {
     this.citationServices.getCitations().subscribe((citation) => this.citationData = citation)
   }
-  get tableHead() {
-    let result: string[] = []
+  get tableHead(): string[] {
+    let result: Array<keyof TableData> | string[] = []
     if (this.citationData[0] && this.citationData[0].Meta_info) {
       result = Object.keys(this.citationData[0].Meta_info)
     }
     return result
   }
 
-  get tableData() {
-    let result: object[] = []
+  get tableData(): Array<TableData | any> {
+    let result: Array<TableData> = []
     this.citationData.forEach(el => {
       result.push(el.Meta_info);
     })
@@ -33,3 +33,28 @@ export class DetailTableComponent implements OnInit {
   }
 
 }
+
+
+interface TableData {
+    jur?: string,
+    type?: string,
+    startpage?: string,
+    coram?: string,
+    series?: string,
+    year?: string,
+    casename?: string,
+    courtid?: string,
+    court?: string,
+    decdate_year?: string,
+    decdate_month?: string,
+    decdate_day?: string,
+    citation?: string,
+    LNI?: string,
+    pcsi?: string,
+    docid?: string,
+    dpsi?: string,
+    parallel_citation?: string,
+    normalization?: object,
+    insertedOn?: string,
+    lastModifiedOn?: string,
+  }

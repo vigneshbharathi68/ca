@@ -1,0 +1,176 @@
+
+<div class="homeimage"><img class="imghome" src="../../assets/image/Home.JPG"></div>
+
+<div class="container1">
+    <div class="box">
+        <mat-card class="maintitle">
+            <table class="maintitletable">
+                <tbody>
+                    <tr>
+                        <td class="tdstyle" style="width: 50%;">Frequently Accessed Consolidated Laws</td>
+                        <td class="tdstyle" style="width: 20%; text-align: right; color:  #6076d0;"><a routerLink="Consolidated-Laws">View all</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </mat-card>
+            <mat-card class="maintitlebody">
+        <table class="maintitlebodytable">
+        <thead></thead>
+        <tbody>
+            <tr *ngFor="let item of getdata">
+                <td class="lefttd">{{item.actName}}</td>
+                <td class="righttd">{{item.insertedDate | date:'mediumDate'}}</td>
+            </tr>
+            <!-- <tr>
+                <td class="lefttd">COVID-19 No.2</td>
+                <td class="righttd">Acts 2020</td>
+            </tr>
+            <tr>
+                <td class="lefttd">COVID-19 (Cook Islands National Superannuation 2021 No:3</td>
+                <td class="righttd">Acts 2020</td>
+            </tr>
+            <tr>
+                <td class="lefttd">Income Tax (Standard Deductions for Ind.) Amdt Act 2020, No. 17</td>
+                <td class="righttd">Acts 2020</td>
+            </tr>
+            <tr>
+                <td class="lefttd">Cook Islands National Superannuation Act 2020, No. 16</td>
+                <td class="righttd">Acts 2020</td>
+            </tr>
+            <tr>
+                <td class="lefttd">Appropriation Amendment No.1 2020</td>
+                <td class="righttd">Acts 2020</td>
+            </tr> -->
+        </tbody>
+        
+        </table>
+        
+        
+            </mat-card> 
+        
+            <mat-card class="maintitle">
+                <table class="maintitletable">
+                    <tbody>
+                        <tr>
+                            <td class="tdstyle" style="width: 50%;">Most Recent Laws as Piblished</td>
+                            <td class="tdstyle" style="width: 20%; text-align: right; color:  #6076d0;text-decoration: none; "><a routerLink="Consolidated-Laws">View all</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </mat-card>
+            <mat-card class="maintitlebody2">
+                <table class="maintitlebodytable2">
+                <thead></thead>
+                <tbody>
+                   <tr>
+                    <td class="lefttd" style="color:black ; font-weight:500 ;">Acts</td>
+                   </tr>
+                   <tr *ngFor="let item of getRecentData">
+                    <td class="lefttd">{{item.actName}}</td>
+                    <td class="righttd">{{item.insertedDate | date:'mediumDate'}}</td>
+                </tr>
+        <!-- <tr>
+            <td class="lefttd">2020 COVID-19 (Cook Islands National Superannuation) No.2 No.20</td>
+            <td class="righttd">4 Sep 2022</td>
+        </tr>
+        
+            <tr>
+                <td class="lefttd">COVID-19(Island Govt Elections) Act 2020, No. 15</td>
+                <td class="righttd">4 Sep 2022</td>
+            </tr>
+            <tr>
+                <td class="lefttd">Cook Islands National Superannuation Act 2020, No. 16</td>
+                <td class="righttd">4 Sep 2022</td>
+            </tr>
+                <tr>
+                    <td class="lefttd">2020 COVID-19 Amendment Act(No. 2) No 21</td>
+                    <td class="righttd">4 Sep 2022</td>
+                </tr>
+                    <tr>
+                        <td class="lefttd">Banking Amendment Act 2020, No. 10</td>
+                        <td class="righttd">4 Sep 2022</td>
+                    </tr> -->
+                        <tr>
+                            <td class="lefttd" style="color:black; font-weight: 500;">Subsidiary Legislation</td>
+                            <td class="righttd"></td>
+                        </tr>
+                            <tr>
+                                <td class="lefttd">2020 COVID-19(Cook Islands National Superannuation) No.2 No:20</td>
+                                <td class="righttd">4 Sep 2022</td> 
+                            </tr>
+                               <tr>
+                                <td class="lefttd">COVID-19 (Island Govt Elections) Act 2020, No.15</td>
+                                <td class="righttd">4 Sep 2022</td>
+                               </tr> 
+                                  <tr>
+                                    <td class="lefttd">Cook Islands National Superannuation Act 2020, No. 16</td>
+                                    <td class="righttd">4 Sep 2022</td>
+                                  </tr>     
+                                    <tr>
+                                        <td class="lefttd">2020 COVID-19 Amendment Act(No.2) No 21</td>
+                                        <td class="righttd">4 Sep 2022</td>
+                                    </tr>
+        <tr>
+            <td class="lefttd">Banking Amendment Act 2020, No.10</td>
+            <td class="righttd">4 Sep 2022</td>
+        </tr>
+        
+        
+                </tbody>
+                
+                </table>
+                
+                
+                    </mat-card> 
+                
+        </div>
+          
+        <div class="boxside">
+<img  class="sideimage" src="../../assets/image/sideimage.JPG">
+<div class="sideimagetext">
+    <h1>Laws of Cook Islands</h1>
+    <p>This website is managered by the office of the Attorney- General ('office') for the purpose of providing information free of change for benefit of the public. <b>Learn more</b> </p>
+</div>
+<div class="covidtext">
+    <h2>Popular topics</h2>
+    <div class="covidimg">
+        <table>
+            <tr>
+                <td><img style="width:50px ;" src="../../assets/image/covid.JPG"></td>
+                <td><p style="margin-top:10px ; font-size:18px; font-weight:500 ; padding-left: 0px; width: 100%;">COVID-19</p></td>
+            </tr>
+        </table>
+        
+        
+    </div>
+    <div class="covidimg1">
+        <table>
+            <tr>
+                <td><img src="../../assets/image/emp.JPG"></td>
+                <td><p>Employee Benefits</p></td>
+            </tr>
+        </table>
+       
+    </div>
+    
+<div class="ContactUstext">
+    <h2>Contact Us</h2>
+
+    <p>Please send us an Email when you have any issues<br> with a act or any suggestions.</p>
+    <p>Email: <a>info@laws.gov.ck</a></p>
+</div>
+    
+</div>
+
+        </div>
+
+        
+</div>
+
+
+
+
+
+
+  
+  

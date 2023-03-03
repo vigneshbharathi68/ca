@@ -1,35 +1,24 @@
-<div class="table-container">
-    <!-- {{ tableData | json }} -->
-    <div *ngIf="tableData.length > 0;">
-        <div *ngFor="let data of tableData; let indexOfElement=index;">
-            {{ data.jur }}
-        </div>
-
-    </div>
-    <table class="table">
+<div class="table-container">    
+    <table class="table table-bordered">
         <thead class="" style="background-color: #F4F4F4;">
             <tr>
-                <th *ngFor="let title of tableHead " scope="col">{{ title }}</th>
+                <th *ngFor="let title of tableHead" scope="col">{{ title }}</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+            <tr *ngFor="let data of tableData;">
+                
+                    <td *ngFor="let title of tableHead">
+                        <!-- Normal data -->
+                        <span *ngIf="title !== 'normalization'; else elseBlock;">
+                            {{ data[title]}}
+                        </span>
+                        <!-- Normalization data -->
+                        <ng-template #elseBlock>
+                            {{ data[title] }}
+                           <span>{{ data[title]["Noramlize_courtname"][0] }}</span>
+                        </ng-template>
+                    </td>
             </tr>
         </tbody>
     </table>
